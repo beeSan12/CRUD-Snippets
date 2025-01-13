@@ -1,0 +1,41 @@
+<h1>Create snippet</h1>
+<form class="row g-3" method="post" action="./snippets/create">
+  <div class="col-md-12">
+    <label class="form-label" for="descriptionInput">
+      Description
+      <button type="button" id="toggleWorkoutInfo" class="btn btn-info">Info</button>
+      <!-- Hidden passphrase info section -->
+      <div class="info-workout" style="display:none;">
+        <h4>Private or public?</h4>
+        <p>When submitting a workout it automaticly becomes public, which means that anyone can read
+          your workoutsnippet. If you want to keep your workout private, you can check the "Private" box,
+          then only your friends can take part of your workout. If you wish to keep your workout for only yourself,
+          you can check the "Just for me" box. If you do change your mind after submutting, you can always update
+          your snippet.
+        </p>
+      </div>
+    </label>
+    <input type="text" class="form-control" id="descriptionInput" name="description"
+      placeholder="Enter a new snippet description here" required autofocus />
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="doneCheck" name="private" />
+      <label class="form-check-label" for="doneCheck">
+        Private
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="doneCheck" name="justForMe" />
+      <label class="form-check-label" for="doneCheck">
+        Just for me
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Done</button>
+  </div>
+  <br>
+</form>

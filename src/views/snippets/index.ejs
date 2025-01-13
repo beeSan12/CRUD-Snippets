@@ -1,0 +1,67 @@
+<div class="jumbotron">
+  <div id="workoutContainer">
+    <div id="snippetsContainer">
+      <h1>Friends working out</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Workout</th>
+            <% if (locals.isAuthenticated) { %>
+              <th>Actions</th>
+              <% } %>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (viewData?.snippets?.length) { %>
+            <% viewData.snippets.forEach(function(snippet) { %>
+              <tr>
+                <td>
+                  <% if (snippet.showAuthorName) { %>
+                    <%= snippet.authorUsername %>
+                      <% } else { %>
+                        Anonymous
+                        <% } %>
+                </td>
+                <td>
+                  <%= new Date(snippet.createdAt).toLocaleDateString() %>
+                </td>
+                <td>
+                  <%= new Date(snippet.createdAt).toLocaleTimeString() %>
+                </td>
+
+                <td>
+                  <% if (snippet.description.length> 200) { %>
+                    <%= snippet.description.substring(0, 200) %>...
+                      <span class="more" style="display: none">
+                        <%= snippet.description.substring(200) %>
+                      </span>
+                      <button class="toggle-more">Show More</button>
+                      <% } else { %>
+                        <%= snippet.description %>
+                          <% } %>
+                </td>
+                <% if (locals.isAuthenticated && snippet.author._id.toString()===locals.userId.toString()) { %>
+                  <td class="text-nowrap">
+                    <a href="./snippets/<%= snippet.id %>/update">Update</a>
+                    <a href="./snippets/<%= snippet.id %>/delete">Delete</a>
+                  </td>
+                  <% } %>
+              </tr>
+              <% }) %>
+                <% } else { %>
+                  <tr>
+                    <td colspan="3" class="text-center text-danger">
+                      There are no snippets to display
+                    </td>
+                  </tr>
+                  <% } %>
+        </tbody>
+      </table>
+    </div>
+    <button id="prevSnippets" style="display:none">Previous</button>
+    <button id="nextSnippets" style="display:none">Next</button>
+  </div>
+</div>

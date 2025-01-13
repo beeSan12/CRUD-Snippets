@@ -1,0 +1,57 @@
+<div class="jumbotron">
+  <div class="containerDash">
+    <h1 class="display-3">My Account</h1>
+    <div class="dashboardContainer">
+
+      <!-- User workouts section -->
+      <div class="userWorkoutView">
+        <h2>My workouts</h2>
+        <div id="myWorkoutList">
+        </div>
+
+        <button id="prevMyWorkouts" style="display:none">Previous</button>
+        <button id="nextMyWorkouts" style="display:none">Next</button>
+
+      </div>
+
+    <!-- Friends' workouts section -->
+    <div class="friendsView">
+      <h2>My friends</h2>
+      <div id="friendsWorkoutsList">
+        <!-- Friends' workouts will be dynamically loaded here via JavaScript or server-side rendering -->
+      </div>
+
+      <button id="prevFriendsWorkouts" style="display:none">Previous</button>
+      <button id="nextFriendsWorkouts" style="display:none">Next</button>
+    </div>
+
+    <br>
+
+    <!-- Search for friends section -->
+    <div class="searchView">
+      <h2>Search for friends</h2>
+      <form id="searchForm">
+        <input type="text" name="username" placeholder="Search for friends by username">
+        <br>
+        <button type="submit" class="searchButton">Search</button>
+      </form>
+      <br>
+      <div id="searchResults"></div>
+
+
+    </div>
+
+    <!-- Friend requests section -->
+    <div id="friendRequestsContainer">
+      <h2>Friend Requests</h2>
+      <!-- Friend requests will be dynamically loaded here -->
+    </div>
+
+    <!-- Actions -->
+    <div class="actionsView">
+      <a class="nav-link" href="./snippets/create">>> New workout</a>
+      <a class="nav-link" href="./users/logout">>> Log out</a>
+    </div>
+  </div>
+</div>
+</div>

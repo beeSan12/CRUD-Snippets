@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Login</h1>
+    <form class="row g-3" id="login-form" method="post" action="./users/login" autocomplete="off">
+      <div class="col-md-6">
+        <label class="form-label" for="usernameInput">Username</label>
+        <input type="text" class="form-control" id="usernameInput" name="username" placeholder="Insert a username"
+          required autofocus value="" />
+      </div>
+      <br>
+      <div class="col-md-6">
+        <label class="form-label" for="passwordInput">Password</label>
+        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Insert a password"
+          required autocomplete="off" value="" />
+      </div>
+      <br>
+      <div class="col-12">
+        <button type="submit" class="loginButton">Login</button>
+      </div>
+      <div id="message-container" style="display:none;" class="alert alert-success" role="alert">
+        <!-- Success message will be inserted here -->
+      </div>
+      <br>
+    </form>
+  </div>
+</div>

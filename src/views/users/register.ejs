@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Register</h1>
+        <form class="row g-3" id="register-form" method="post" action="./users/register" autocomplete="off">
+            <div class="col-md-6">
+                <label class="form-label" for="usernameInput">Username</label>
+                <input type="text" class="form-control" id="usernameInput" name="username"
+                    placeholder="Choose a username" required autofocus value="" />
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label class="form-label" for="emailInput">Email</label>
+                <input type="email" class="form-control" id="emailInput" name="email" placeholder="Your email address"
+                    required value="" />
+            </div>
+            <br>
+            <div class="col-md-6">
+                <label class="form-label" for="passwordInput">Password</label>
+                <input type="password" class="form-control" id="passwordInput" name="password"
+                    placeholder="Create a password" required autocomplete="off" value="" />
+                <br>
+                    <p>
+                    Tip: Instead of a password, consider using a passphrase. Passphrases are like passwords, but longer
+                    and easier to remember. For example, "i-need-my-coffee-at-3!".
+                </p>
+                <br>
+                <button type="button" id="togglePassphraseInfo" class="btn btn-info">Why Use a Passphrase?</button>
+                <!-- Hidden passphrase info section -->
+                <div class="info-passphrase" style="display:none;">
+                    <h4>Why use a passphrase?</h4>
+                    <p>Passphrases are not only more secure against brute-force attacks but also easier to remember than
+                        complex passwords. By combining multiple words into a memorable phrase, you enhance security
+                        without sacrificing convenience.</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="registerButton">Register</button>
+            </div>
+            <br>
+            <div id="message-container" style="display:none;" class="alert alert-success" role="alert">
+                <!-- Success message will be inserted here -->
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
